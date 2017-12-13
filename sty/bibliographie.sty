@@ -1,0 +1,9 @@
+% Dépendances: {biblatex}
+
+% citer tous les auteurs d'un article
+\newcommand{\citeallauthors}[1]{%
+  \AtNextCite{\defcounter{maxnames}{99}}\citeauthor{#1}%
+}
+
+% vim:set et sw=2 ts=2 tw=100:
+

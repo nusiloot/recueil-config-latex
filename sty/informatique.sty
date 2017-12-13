@@ -1,0 +1,47 @@
+%%%%%%%%%%%%%%%%%%%%%%
+%  Symboles communs  %
+%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\bigo}{\mathcal{O}}
+
+% Dépendance: {algorithm} {algpseudocode}
+\makeatletter
+\renewcommand{\ALG@name}{Algorithme}
+\makeatother
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%  Théorie de la sécurité calculatoire  %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Dépendance: {{xparse} | {mathtools}} {amssymb} {amsmath} {amsthm} {mathrsfs}
+\DeclareDocumentCommand{\PrivK}{O{esp} O{\A} O{\Pi}}{\textsf{PrivK}^{\textsf{#1}}_{#2,#3}}
+\DeclareDocumentCommand{\PubK}{O{esp} O{\A} O{\Pi}}{\textsf{PubK}^{\textsf{#1}}_{#2,#3}}
+\DeclareDocumentCommand{\PrivSK}{O{esp} O{\A} O{\Pi}}{\textsf{PrivSK}^{\textsf{#1}}_{#2,#3}}
+\DeclareDocumentCommand{\Hashcoll}{O{\A} O{\Pi}}{\textsf{Hash-coll}_{#1,#2}}
+\DeclareDocumentCommand{\RSAinv}{O{\A} O{\GenRSA}}{\textsf{RSA-inv}_{#1,#2}}
+\DeclareDocumentCommand{\KE}{O{esp} O{\A} O{\Pi}}{\textsf{KE}^{\textsf{#1}}_{#2,#3}}
+% Primitive `Sign`
+\newcommand{\Sign}[2]{\textsf{Sign}_{#1}\left(#2\right)}
+% Primitive `Mac`
+\newcommand{\Mac}[2]{\textsf{Mac}_{#1}\left(#2\right)}
+% Primitive `Gen`
+\newcommand{\Gen}{\textsf{Gen}}
+% Primitive `GenRSA`
+\newcommand{\GenRSA}{\textsf{GenRSA}}
+% Primitive `Enc`
+\newcommand{\Enc}{\textsf{Enc}}
+% Primitive `Dec`
+\newcommand{\Dec}{\textsf{Dec}}
+% Primitive `négl`
+\newcommand{\negl}{\textsf{négl}}
+% Primitive `sortie`
+\newcommand{\out}{\textsf{sortie}}
+% Primitive `trans`
+\newcommand{\trans}{\textsf{trans}}
+
+% symboles communs
+\newcommand{\Ciphers}{\mathcal{C}}
+\newcommand{\Msgs}{\mathcal{M}}
+\newcommand{\Attacker}{\mathcal{A}}
+\newcommand{\Keyspace}{\mathcal{K}}
+
+% vim:set et sw=2 ts=2 tw=100:
+
