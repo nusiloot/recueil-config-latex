@@ -1,0 +1,16 @@
+\@ifpackageloaded{ltxcmds}{}{\usepackage{ltxcmds}}
+
+% Commande: \IfPackagesLoaded{liste,de,paquets}{si-chargés}{sinon}
+% Valide si tous les paquets d'une liste sont chargés. Le cas échéant, le code LaTeX passé en
+% premier argument est exécuté. Sinon, le code en deuxième argument est exécuté.
+\makeatletter
+\newif\ifallloaded
+\newcommand{\IfPackagesLoaded}[3]{%
+  \allloadedtrue
+  \@for\@tempa:=#1\do{%
+    \ltx@ifpackageloaded{\@tempa}{}{\allloadedfalse}}%
+  \ifallloaded #2\else #3\fi}
+\makeatother
+
+% vim:set et sw=2 ts=2 tw=100:
+
