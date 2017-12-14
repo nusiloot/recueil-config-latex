@@ -6,11 +6,32 @@
 %%%%%%%%%%%%%%%%%%%%%%
 \newcommand{\bigo}{\mathcal{O}}
 
-% Dépendance: {algorithm} {algpseudocode}
-\IfPackagesLoaded{algorithm,algpseudocode}{
+%%%%%%%%%%%%%%%%%
+%  Algorithmes  %
+%%%%%%%%%%%%%%%%%
+
+% Dépendance: {algorithm}
+\@ifpackageloaded{algorithm}{
+  % Titre de la boîte algorithme
   \makeatletter
   \renewcommand{\ALG@name}{Algorithme}
   \makeatother
+}{}
+
+% Mot réservés d'un pseudocode
+% Dépendance: {algpseudocode}
+\@ifpackageloaded{algpseudocode}{%
+  \algrenewcommand\algorithmicwhile{\textbf{tant que}}
+  \algrenewcommand\algorithmicfunction{\textbf{fonction}}
+  \algrenewcommand\algorithmicend{\textbf{fin}}
+  \algrenewcommand\algorithmicdo{\textbf{faire}}
+  \algrenewcommand\algorithmicfor{\textbf{pour}}
+  \algrenewcommand\algorithmicif{\textbf{si}}
+  \algrenewcommand\algorithmicelse{\textbf{sinon}}
+  \algrenewcommand\algorithmicthen{\textbf{alors}}
+  \algrenewcommand\algorithmicreturn{\textbf{retourner}}
+  \algrenewcommand\algorithmicrepeat{\textbf{faire}}
+  \algrenewcommand\algorithmicuntil{\textbf{tant que}}
 }{}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -37,6 +58,7 @@
 % Primitive `trans`
 \newcommand{\trans}{\textsf{trans}}
 
+% Expériences de sécurité
 \IfPackagesLoaded{xparse,amssymb,amsmath}{
   \DeclareDocumentCommand{\PrivK}{O{esp} O{\A} O{\Pi}}{\textsf{PrivK}^{\textsf{#1}}_{#2,#3}}
   \DeclareDocumentCommand{\PubK}{O{esp} O{\A} O{\Pi}}{\textsf{PubK}^{\textsf{#1}}_{#2,#3}}
