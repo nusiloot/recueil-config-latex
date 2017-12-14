@@ -32,6 +32,15 @@
   \newcommand{\eqdef}{\overset{\bigtriangleup}{=}}
 }{}
 
+\@ifpackageloaded{mathtools}{
+  % Injection
+  \newcommand{\injection}{\stackrel{\mathclap{\tiny\mbox{1-1}}}{\longrightarrow}}
+  % Surjection
+  \newcommand{\surjection}{\stackrel{\mathclap{\tiny\mbox{sur}}}{\longrightarrow}}
+  % Bijection
+  \newcommand{\bijection}{\longleftrightarrow}
+}{}
+
 \newcommand{\Pref}{\mathrm{Pref}}
 
 %%%%%%%%%%%%%%%
