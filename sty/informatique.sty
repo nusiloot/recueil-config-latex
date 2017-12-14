@@ -52,5 +52,56 @@
 \newcommand{\Attacker}{\mathcal{A}}
 \newcommand{\Keyspace}{\mathcal{K}}
 
+%%%%%%%%%%%%%%%%%%%%%
+%  Listing de code  %
+%%%%%%%%%%%%%%%%%%%%%
+\@ifpackageloaded{color}{%
+  \definecolor{lgreen}{rgb}{0,0.6,0}
+  \definecolor{lgray}{rgb}{0.5,0.5,0.5}
+  \definecolor{lmauve}{rgb}{0.58,0,0.82}
+}{}
+
+\IfPackagesLoaded{listings,color}{%
+\lstset{ %
+  backgroundcolor=\color{white},
+  basicstyle=\ttfamily\footnotesize, % The size of the fonts that are used for the code
+  breakatwhitespace=false,           % Sets if automatic breaks should only happen at whitespace
+  breaklines=true,                   % Sets automatic line breaking
+  captionpos=b,                      % Sets the caption-position to bottom
+  commentstyle=\color{lgreen},       % Comment style
+  deletekeywords={...},              % If you want to delete keywords from the given language
+  escapeinside={\%*}{*)},            % If you want to add LaTeX within your code
+  extendedchars=true,                % Lets you use non-ASCII characters; for 8-bits encodings only,
+                                     % does not work with UTF-8
+                                     %
+  frame=single,                      % Adds a frame around the code
+  keepspaces=true,                   % Keeps spaces in text, useful for keeping indentation of code
+                                     % (possibly needs columns=flexible)
+  columns=flexible,                  % Column configuration.
+                                     %
+  keywordstyle=\color{blue},         % Keyword style
+  numbers=left,                      % Where to put the line-numbers; possible values are (none, left,
+                                     % right)
+                                     %
+  numbersep=5pt,                     % How far the line-numbers are from the code
+  numberstyle=\tiny\color{lgray},    % The style that is used for the line-numbers
+  rulecolor=\color{black},           % If not set, the frame-color may be changed on line-breaks
+                                     % within not-black text (e.g. comments (green here))
+                                     %
+  showspaces=false,                  % Show spaces everywhere adding particular underscores; it
+                                     % overrides 'showstringspaces'
+                                     %
+  showstringspaces=false,            % Underline spaces within strings only
+  showtabs=false,                    % Show tabs within strings adding particular underscores
+  stepnumber=1,                      % The step between two line-numbers. If it's 1, each line will be
+                                     % numbered
+                                     %
+  stringstyle=\color{lmauve},        % String literal style
+  tabsize=2,                         % Sets default tabsize to 2 spaces
+  title=\lstname                     % Show the filename of files included with \lstinputlisting; also
+                                     % try caption instead of title
+}
+}{}
+
 % vim:set et sw=2 ts=2 tw=100:
 
