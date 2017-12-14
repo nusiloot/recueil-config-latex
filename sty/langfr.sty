@@ -1,3 +1,6 @@
+% Des commandes LaTeX/Tex utiles pour écrire le style
+\@ifpackageloaded{utils}{}{\usepackage{utils}}
+
 %%%%%%%%%%%%%%%%%%
 %  Mots communs  %
 %%%%%%%%%%%%%%%%%%
@@ -10,7 +13,9 @@
 % Dépendances: {biblatex}
 
 % et al. -> et collab.
-\DefineBibliographyStrings{french}{andothers={et~collab\adddot}}
+\@ifpackageloaded{biblatex}{%
+  \DefineBibliographyStrings{french}{andothers={et~collab\adddot}}
+}{}
 
 % vim:set et sw=2 ts=2 tw=80:
 
