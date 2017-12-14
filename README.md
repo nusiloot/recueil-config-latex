@@ -14,9 +14,11 @@ Répertoire `sty/`:
 ```
 sty/
 ├── bibliographie.sty
+├── general.sty
 ├── informatique.sty
 ├── langfr.sty
-└── mathematiques.sty
+├── mathematiques.sty
+└── utilitairesltx.sty
 ```
 
 # Auteur
