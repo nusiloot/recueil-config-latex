@@ -4,17 +4,71 @@
 %%%%%%%%%%%%%%%%%%%%%%
 %  Symboles communs  %
 %%%%%%%%%%%%%%%%%%%%%%
-% Dépendances: {amssymb} {amsmath} {amsthm} {mathrsfs} {mathtools}
-\newcommand{\N}{\mathbb{N}}
-\newcommand{\Z}{\mathbb{Z}}
-\newcommand{\R}{\mathbb{R}}
-\newcommand{\E}{\mathbb{E}}
-\newcommand{\G}{\mathbb{G}}
-\newcommand{\eqdef}{\overset{\bigtriangleup}{=}}
-\newcommand{\eps}{\varepsilon}
-\renewcommand{\Pr}{\mathlarger{\mathlarger{\mathbb{P}}}}
+% Dépendances: {amssymb} {amsmath}
+\@ifpackageloaded{amssymb}{
+  % Ensembles usuels
+  % Naturels
+  \newcommand{\N}{\mathbb{N}}
+  % Entiers
+  \newcommand{\Z}{\mathbb{Z}}
+  % Réels
+  \newcommand{\R}{\mathbb{R}}
+  % Espace euclidien
+  \newcommand{\E}{\mathbb{E}}
+  % Groupe
+  \newcommand{\G}{\mathbb{G}}
+  % Epsilon
+  \newcommand{\eps}{\varepsilon}
+  % Probabilité
+  \renewcommand{\Pr}{\mathbb{P}}
+}{}
+
+\@ifpackageloaded{amsmath}{
+  % Vecteur colonne
+  \newcommand*\colvec[3][]{
+      \begin{pmatrix}\ifx\relax#1\relax\else#1\\\fi#2\\#3\end{pmatrix}
+  }
+  % Égalité par définition
+  \newcommand{\eqdef}{\overset{\bigtriangleup}{=}}
+}{}
 
 \newcommand{\Pref}{\mathrm{Pref}}
+
+%%%%%%%%%%%%%%%
+%  Théorèmes  %
+%%%%%%%%%%%%%%%
+\@ifpackageloaded{amsthm}{
+  \theoremstyle{theorem}
+  % Théorème
+  \newtheorem{theorem}{Théorème}
+  % Lemme
+  \newtheorem{lemma}{Lemme}
+
+  \theoremstyle{definition}
+  % Définition
+  \newtheorem{definition}{Définition}
+  % Exemple
+  \newtheorem{example}{Exemple}
+
+  \theoremstyle{plain}
+  % Proposition
+  \newtheorem{proposition}{Proposition}
+
+  \theoremstyle{remark}
+  % Remarque
+  \newtheorem{remark}{Remarque}[section]
+
+  % Définition numérotée manuellement
+  \newenvironment{ndefinition}[1]
+    {\renewcommand\thedefinition{#1}\definition}
+    {\enddefinition}
+
+  % Lemme numérotée manuellement
+  \newenvironment{nlemma}[1]
+    {\renewcommand\thelemma{#1}\lemma}
+    {\endlemma}
+
+}{}
 
 % vim:set et sw=2 ts=2 tw=100:
 
