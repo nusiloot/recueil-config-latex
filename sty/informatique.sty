@@ -4,6 +4,7 @@
 %%%%%%%%%%%%%%%%%%%%%%
 %  Symboles communs  %
 %%%%%%%%%%%%%%%%%%%%%%
+% Complexité O(n)
 \newcommand{\bigo}{\mathcal{O}}
 
 %%%%%%%%%%%%%%%%%
@@ -13,9 +14,7 @@
 % Dépendance: {algorithm}
 \@ifpackageloaded{algorithm}{
   % Titre de la boîte algorithme
-  \makeatletter
   \renewcommand{\ALG@name}{Algorithme}
-  \makeatother
 }{}
 
 % Mot réservés d'un pseudocode
@@ -37,7 +36,6 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %  Théorie de la sécurité calculatoire  %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Dépendance: {{xparse} | {mathtools}} {amssymb} {amsmath}
 
 % Primitive `Sign`
 \newcommand{\Sign}[2]{\textsf{Sign}_{#1}\left(#2\right)}
@@ -59,6 +57,7 @@
 \newcommand{\trans}{\textsf{trans}}
 
 % Expériences de sécurité
+% Dépendance: {xparse} {amssymb} {amsmath}
 \IfPackagesLoaded{xparse,amssymb,amsmath}{
   \DeclareDocumentCommand{\PrivK}{O{esp} O{\A} O{\Pi}}{\textsf{PrivK}^{\textsf{#1}}_{#2,#3}}
   \DeclareDocumentCommand{\PubK}{O{esp} O{\A} O{\Pi}}{\textsf{PubK}^{\textsf{#1}}_{#2,#3}}
@@ -77,6 +76,7 @@
 %%%%%%%%%%%%%%%%%%%%%
 %  Listing de code  %
 %%%%%%%%%%%%%%%%%%%%%
+% Dépendance: {color}
 \@ifpackageloaded{color}{%
   \definecolor{lgreen}{rgb}{0,0.6,0}
   \definecolor{lgray}{rgb}{0.5,0.5,0.5}
