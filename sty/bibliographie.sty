@@ -13,6 +13,11 @@
   \newcommand{\citefirstauthor}[1]{%
     \AtNextCite{\defcounter{maxnames}{1}}\citeauthor{#1}%
   }
+
+  % citer le nom complet d'un auteur
+  \newcommand{\fullnamecite}[1][999]{%
+    \AtNextCite{\AtEachCitekey{\defcounter{maxnames}{#1}\DeclareNameAlias{labelname}{given-family}}}
+  }
 }{}
 
 % vim:set et sw=2 ts=2 tw=100:
