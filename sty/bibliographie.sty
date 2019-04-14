@@ -4,6 +4,9 @@
 % Dépendances: {biblatex}
 
 \@ifpackageloaded{biblatex}{
+  % assure que l'espace entre le nom et la citation (\textcite) est un espace insécable.
+  \renewcommand\namelabeldelim{\addnbspace}
+
   % citer tous les auteurs d'un article
   \newcommand{\citeallauthors}[1]{%
     \AtNextCite{\defcounter{maxnames}{99}}\citeauthor{#1}%
